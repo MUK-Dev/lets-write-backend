@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>A FeathersJS application</title>
+    <meta name="description" content="A FeathersJS server" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+    <h1 style="text-align: center; margin-top: 40vh" id="info">
+      Signing You in.....
+    </h1>
+    <script>
+      const params = new URLSearchParams(window.location.hash.slice(1));
+      const token = params.get("access_token");
+      console.log(token);
+      if (window.opener && token) {
+        window.opener.postMessage({ token }, "http://localhost:3000");
+      } else {
+        info.textContent = "Something went wrong...";
+      }
+      window.close();
+    </script>
+  </body>
+</html>
