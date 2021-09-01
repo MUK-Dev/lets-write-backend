@@ -11,8 +11,9 @@ module.exports = (options = {}) => {
       .update(context.data.email.toLowerCase())
       .digest("hex");
 
-    const gravatarUrl = `https://s.gravatar.com/avatar/${hash}?s=400&d=identicon`;
-    context.data.avatar_url = gravatarUrl;
+    // const gravatarUrl = `https://s.gravatar.com/avatar/${hash}?s=400&d=identicon`;
+    const dicebearUrl = `https://avatars.dicebear.com/api/bottts/:${hash}.svg`;
+    context.data.avatar_url = dicebearUrl;
     return context;
   };
 };

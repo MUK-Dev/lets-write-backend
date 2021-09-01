@@ -16,9 +16,6 @@ module.exports = function (app) {
   });
 
   app.publish((data, hook) => {
-    console.log(
-      "Publishing all events to all authenticated users. See `channels.js` and https://docs.feathersjs.com/api/channels.html for more information."
-    ); // eslint-disable-line
     return app.channel("authenticated");
   });
 };
