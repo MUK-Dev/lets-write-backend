@@ -13,9 +13,11 @@ module.exports = function (app) {
         user_id: { type: mongoose.Types.ObjectId, required: true, ref: "User" },
         username: { type: String, required: true },
         avatar: { type: String, required: true },
+        email: { type: String, required: true },
       },
       room: {
         room_id: { type: mongoose.Types.ObjectId, required: true, ref: "Room" },
+        room_owner_email: { type: String, required: true },
         question: { type: String, required: true },
       },
       grade: { type: String, default: undefined },

@@ -16,6 +16,7 @@ module.exports = function (app) {
           ref: "User",
           required: true,
         },
+        email: { type: String, required: true },
         name: { type: String, required: true },
       },
       students: [{ type: mongoose.Types.ObjectId, ref: "User" }],

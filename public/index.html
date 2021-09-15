@@ -15,6 +15,7 @@
       console.log(token);
       if (window.opener && token) {
         window.opener.postMessage({ token }, "http://192.168.18.166:3000");
+        window.opener.postMessage({ token }, "http://localhost:3000");
       } else {
         info.textContent = "Something went wrong...";
       }
